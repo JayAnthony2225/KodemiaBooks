@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		D6BC193B27C2DBF100534308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193A27C2DBF100534308 /* AppDelegate.swift */; };
 		D6BC193D27C2DBF100534308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193C27C2DBF100534308 /* SceneDelegate.swift */; };
-		D6BC193F27C2DBF100534308 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193E27C2DBF100534308 /* ViewController.swift */; };
-		D6BC194227C2DBF100534308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BC194027C2DBF100534308 /* Main.storyboard */; };
+		D6BC193F27C2DBF100534308 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193E27C2DBF100534308 /* LoginViewController.swift */; };
 		D6BC194427C2DBF200534308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BC194327C2DBF200534308 /* Assets.xcassets */; };
 		D6BC194727C2DBF200534308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BC194527C2DBF200534308 /* LaunchScreen.storyboard */; };
+		D6BC195327C2FC1C00534308 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC195227C2FC1C00534308 /* Constants.swift */; };
+		D6BC195527C3015800534308 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC195427C3015800534308 /* SingInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D6BC193727C2DBF100534308 /* KodemiaBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodemiaBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BC193A27C2DBF100534308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6BC193C27C2DBF100534308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D6BC193E27C2DBF100534308 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D6BC194127C2DBF100534308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6BC193E27C2DBF100534308 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6BC194327C2DBF200534308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6BC194627C2DBF200534308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6BC194827C2DBF200534308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6BC195227C2FC1C00534308 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D6BC195427C3015800534308 /* SingInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		D6BC193927C2DBF100534308 /* KodemiaBooks */ = {
 			isa = PBXGroup;
 			children = (
-				D6BC193A27C2DBF100534308 /* AppDelegate.swift */,
-				D6BC193C27C2DBF100534308 /* SceneDelegate.swift */,
-				D6BC193E27C2DBF100534308 /* ViewController.swift */,
-				D6BC194027C2DBF100534308 /* Main.storyboard */,
+				D6BC195127C2E1FD00534308 /* Controller */,
+				D6BC195027C2E1F200534308 /* View */,
+				D6BC194F27C2E1E600534308 /* Model */,
+				D6BC194E27C2E1D300534308 /* Delegates */,
 				D6BC194327C2DBF200534308 /* Assets.xcassets */,
 				D6BC194527C2DBF200534308 /* LaunchScreen.storyboard */,
 				D6BC194827C2DBF200534308 /* Info.plist */,
 			);
 			path = KodemiaBooks;
+			sourceTree = "<group>";
+		};
+		D6BC194E27C2E1D300534308 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D6BC193A27C2DBF100534308 /* AppDelegate.swift */,
+				D6BC193C27C2DBF100534308 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D6BC194F27C2E1E600534308 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6BC195227C2FC1C00534308 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6BC195027C2E1F200534308 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6BC195127C2E1FD00534308 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6BC193E27C2DBF100534308 /* LoginViewController.swift */,
+				D6BC195427C3015800534308 /* SingInViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +162,6 @@
 			files = (
 				D6BC194727C2DBF200534308 /* LaunchScreen.storyboard in Resources */,
 				D6BC194427C2DBF200534308 /* Assets.xcassets in Resources */,
-				D6BC194227C2DBF100534308 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +172,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6BC193F27C2DBF100534308 /* ViewController.swift in Sources */,
+				D6BC193F27C2DBF100534308 /* LoginViewController.swift in Sources */,
+				D6BC195527C3015800534308 /* SingInViewController.swift in Sources */,
 				D6BC193B27C2DBF100534308 /* AppDelegate.swift in Sources */,
 				D6BC193D27C2DBF100534308 /* SceneDelegate.swift in Sources */,
+				D6BC195327C2FC1C00534308 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D6BC194027C2DBF100534308 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D6BC194127C2DBF100534308 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D6BC194527C2DBF200534308 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +322,6 @@
 				INFOPLIST_FILE = KodemiaBooks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +349,6 @@
 				INFOPLIST_FILE = KodemiaBooks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
