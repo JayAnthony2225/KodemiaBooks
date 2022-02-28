@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D618D61F27CC1AC30026C02D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618D61E27CC1AC30026C02D /* DashboardViewController.swift */; };
+		D618D62127CC21C50026C02D /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618D62027CC21C50026C02D /* APIDataManager.swift */; };
+		D618D62327CC21D50026C02D /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618D62227CC21D50026C02D /* Parser.swift */; };
+		D618D62527CC245A0026C02D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618D62427CC245A0026C02D /* EndPoints.swift */; };
+		D62A493027CC360800DFD6FE /* BooksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62A492F27CC360800DFD6FE /* BooksResponse.swift */; };
 		D6BC193B27C2DBF100534308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193A27C2DBF100534308 /* AppDelegate.swift */; };
 		D6BC193D27C2DBF100534308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193C27C2DBF100534308 /* SceneDelegate.swift */; };
 		D6BC193F27C2DBF100534308 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC193E27C2DBF100534308 /* LoginViewController.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D618D61E27CC1AC30026C02D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		D618D62027CC21C50026C02D /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
+		D618D62227CC21D50026C02D /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		D618D62427CC245A0026C02D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		D62A492F27CC360800DFD6FE /* BooksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksResponse.swift; sourceTree = "<group>"; };
 		D6BC193727C2DBF100534308 /* KodemiaBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodemiaBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BC193A27C2DBF100534308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6BC193C27C2DBF100534308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D62A492E27CC35E600DFD6FE /* Response models  */ = {
+			isa = PBXGroup;
+			children = (
+				D62A492F27CC360800DFD6FE /* BooksResponse.swift */,
+			);
+			path = "Response models ";
+			sourceTree = "<group>";
+		};
+		D62A493127CC566200DFD6FE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D618D62027CC21C50026C02D /* APIDataManager.swift */,
+				D618D62227CC21D50026C02D /* Parser.swift */,
+				D618D62427CC245A0026C02D /* EndPoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		D6BC192E27C2DBF100534308 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +109,9 @@
 		D6BC194F27C2E1E600534308 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D62A492E27CC35E600DFD6FE /* Response models  */,
 				D6BC195227C2FC1C00534308 /* Constants.swift */,
+				D62A493127CC566200DFD6FE /* Networking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +128,7 @@
 			children = (
 				D6BC193E27C2DBF100534308 /* LoginViewController.swift */,
 				D6BC195427C3015800534308 /* SingInViewController.swift */,
+				D618D61E27CC1AC30026C02D /* DashboardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,7 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6BC193F27C2DBF100534308 /* LoginViewController.swift in Sources */,
+				D618D62527CC245A0026C02D /* EndPoints.swift in Sources */,
+				D618D62127CC21C50026C02D /* APIDataManager.swift in Sources */,
+				D62A493027CC360800DFD6FE /* BooksResponse.swift in Sources */,
+				D618D61F27CC1AC30026C02D /* DashboardViewController.swift in Sources */,
 				D6BC195527C3015800534308 /* SingInViewController.swift in Sources */,
+				D618D62327CC21D50026C02D /* Parser.swift in Sources */,
 				D6BC193B27C2DBF100534308 /* AppDelegate.swift in Sources */,
 				D6BC193D27C2DBF100534308 /* SceneDelegate.swift in Sources */,
 				D6BC195327C2FC1C00534308 /* Constants.swift in Sources */,

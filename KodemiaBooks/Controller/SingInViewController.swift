@@ -7,63 +7,59 @@
 
 import UIKit
 
-class SingInViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     private lazy var contentStackView: UIStackView = UIStackView()
     private lazy var buttonStackView: UIStackView = UIStackView()
+    //MARK: Textfields
     private lazy var userNameInputTextField: UITextField = UITextField()
     private lazy var userEmailInputTextField: UITextField = UITextField()
-    private lazy var passwordInputTextField: UITextField =  UITextField()
+    private lazy var passwordInputTextField: UITextField = UITextField()
     private lazy var confirmPasswordInputTextField: UITextField = UITextField()
-    
     //MARK: UIButtons
     private lazy var confirmButton: UIButton = UIButton()
     private lazy var cancelButton: UIButton = UIButton()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-    
     }
-    func initUI(){
+    
+    func initUI() {
         view.backgroundColor = .systemBackground
-        let textFieldArray: [UITextField] = [userNameInputTextField,
-                                             userEmailInputTextField,
-                                             passwordInputTextField,
-                                             confirmPasswordInputTextField]
-        //configurar stack view
+        
+        let textfieldArray: [UITextField] = [userNameInputTextField,
+                                            userEmailInputTextField,
+                                            passwordInputTextField,
+                                            confirmPasswordInputTextField]
+        // configurar Stack view
         contentStackView.axis = .vertical
         contentStackView.spacing = Constants.padding
         contentStackView.alignment = .fill
         contentStackView.distribution = .fillEqually
-     
-        //definimos un closure donde se intera cada elemento del arreglo
-        // y textFieldElement va asumido cada valor del arreglo
-        
-        textFieldArray.forEach { textFieldElement in
-            contentStackView.addArrangedSubview(textFieldElement)
-    }
-        //Es lo equivalente a hacer esto
-        //for textField
-    
-        // configurar constrraints del stack view
+        // Definimos un closure donde se itera cada elemento del arreglo
+        // y textfieldElement va asumiendo cada valor del arreglo
+        textfieldArray.forEach { textfieldElement in
+            contentStackView.addArrangedSubview(textfieldElement)
+        }
+        // Es lo equivalente a hacer esto
+//        for textField in textfieldArray {
+//            contentStackView.addArrangedSubview(textField)
+//        }
+        // Configurar constraints del stack view
         self.view.addSubview(contentStackView)
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             contentStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.padding),
             contentStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             contentStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
-
-        textFieldArray.forEach { textFieldElement in
+        textfieldArray.forEach { textFieldElement in
             textFieldElement.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight).isActive = true
             textFieldElement.layer.borderWidth = 1
         }
         
-        var buttonArray: [UIButton] = [confirmButton,
-                                       cancelButton
-        ]
+        let buttonArray: [UIButton] = [ confirmButton, cancelButton]
         
         buttonStackView.axis = .vertical
         buttonStackView.spacing = Constants.padding
@@ -72,12 +68,13 @@ class SingInViewController: UIViewController {
         
         buttonArray.forEach { button in
             buttonStackView.addArrangedSubview(button)
-            
+        
         }
+        
         view.addSubview(buttonStackView)
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate( [
             buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.padding),
             buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
@@ -85,9 +82,24 @@ class SingInViewController: UIViewController {
         
         buttonArray.forEach { button in
             button.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
-            button.backgroundColor = .red
-            
+            button.backgroundColor = .blue
         }
         
-        }
+        // Placeholders of textfields
+        userNameInputTextField.placeholder = Constants.userString
+        userEmailInputTextField.placeholder = Constants.emailString
+        passwordInputTextField.placeholder = Constants.passwordString
+        confirmPasswordInputTextField.placeholder = Constants.confirmPasswordString
+        
+        // Button titles
+        confirmButton.setTitle(Constants.acceptString, for: .normal)
+        cancelButton.setTitle(Constants.cancelString, for: .normal)
+        
+//        //Aqui asignamos un color
+//        confirmButton.setTitleColor(UIColor.red, for: .normal)
+//        //Aqui asignamos la fuente
+//        confirmButton.titleLabel?.font = UIFont(name: "Arial", size: 15.0)
+        
+    }
+    
 }

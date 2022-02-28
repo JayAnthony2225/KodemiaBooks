@@ -8,75 +8,103 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    //Una variable lazy, se crea en el momento que
-    //la invocamos por primera vez
-    private lazy var userInputTextField : UITextField =  UITextField()
-    private lazy var passwordInputTextField : UITextField = UITextField()
-    private lazy var loginButton: UIButton = UIButton()
-    private lazy var singInButton: UIButton = UIButton()
     
+    // Una variable lazy, se crea en el momento que
+    // la invocamo por primera vez.
+    private lazy var userInputTextField: UITextField = UITextField()
+    
+    private lazy var passwordInputTextField: UITextField = UITextField()
+    
+    private lazy var loginButton: UIButton = UIButton()
+    
+    private lazy var signInButton: UIButton = UIButton()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
     }
-    //crar la vista
-   private func initUI(){ // se hizo privada porque la funcion sera usada solo por este controlView
-       self.view.backgroundColor = .systemBackground
-       
-       self.view.addSubview(userInputTextField)
-       userInputTextField.translatesAutoresizingMaskIntoConstraints = false
-       userInputTextField.placeholder = "user"
-       userInputTextField.layer.borderWidth = 1
-       //agregar constraints del user input
-       NSLayoutConstraint.activate([userInputTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100), userInputTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor), userInputTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-       ])
-       
-        // configurando password texfielld
-       self.view.addSubview(passwordInputTextField)
-       passwordInputTextField.translatesAutoresizingMaskIntoConstraints = false
-       passwordInputTextField.placeholder = "password" // Contants.passwordString
-       passwordInputTextField.layer.borderWidth = 1
-       NSLayoutConstraint.activate([passwordInputTextField.topAnchor.constraint(equalTo: userInputTextField.bottomAnchor, constant: 30),
-                                    passwordInputTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                    passwordInputTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-                                   ])
-       
-       //configurando boton de sing in
-       self.view.addSubview(singInButton)
-       self.singInButton.translatesAutoresizingMaskIntoConstraints = false
-       singInButton.setTitle(Constants.singIn, for: .normal)
-       singInButton.backgroundColor = .blue
-       NSLayoutConstraint.activate([
-        singInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
-        singInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        singInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-        singInButton.heightAnchor.constraint(equalToConstant: 50)
-       ])
+    
+    // Crear la vista
+    private func initUI() {
+        self.view.backgroundColor = .systemBackground
         
-       // configurando boton log in
-       self.view.addSubview(loginButton)
-       self.loginButton.translatesAutoresizingMaskIntoConstraints = false
-       self.loginButton.setTitle(Constants.logIn, for: .normal)
-       self.loginButton.backgroundColor = Constants.buttonBackgroundColor
-       NSLayoutConstraint.activate([
-        loginButton.bottomAnchor.constraint(equalTo: singInButton.topAnchor, constant: -30),
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        loginButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-        loginButton.heightAnchor.constraint(equalToConstant: 50)
-       ])
-       
-       singInButton.addTarget(self, action: #selector(onSignInButtonTap), for: .touchUpInside)
-       
+        self.view.addSubview(userInputTextField)
+        // Para que los constraints que definamos en código se tomen en cuenta.
+        userInputTextField.translatesAutoresizingMaskIntoConstraints = false
+        userInputTextField.placeholder = Constants.userString
+        userInputTextField.layer.borderWidth = 1
+        // Agregar constraints del User Input
+        NSLayoutConstraint.activate([
+            userInputTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            userInputTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            userInputTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        // Configurando password textfield
+        self.view.addSubview(passwordInputTextField)
+        passwordInputTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordInputTextField.placeholder = Constants.passwordString
+        passwordInputTextField.layer.borderWidth = 1
+        
+        NSLayoutConstraint.activate([
+            passwordInputTextField.topAnchor.constraint(equalTo: userInputTextField.bottomAnchor, constant: Constants.padding),
+            passwordInputTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordInputTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
+        //Configurando boton de sign in
+        self.view.addSubview(signInButton)
+        self.signInButton.translatesAutoresizingMaskIntoConstraints = false
+        signInButton.setTitle(Constants.signIn, for: .normal)
+        signInButton.backgroundColor = Constants.buttonBackgroundColor
+        NSLayoutConstraint.activate([
+            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.padding),
+            signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion),
+            signInButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize)
+        ])
+        
+        //Configurando boton de login
+        self.view.addSubview(loginButton)
+        self.loginButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.loginButton.setTitle(Constants.logIn, for: .normal)
+        self.loginButton.backgroundColor = Constants.buttonBackgroundColor
+        
+        NSLayoutConstraint.activate([
+            loginButton.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -Constants.padding),
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion),
+            loginButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize)
+        ])
+        
+        signInButton.addTarget(self, action: #selector(onSignInButtonTap), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(onLoginButtonTap), for: .touchUpInside)
+        
     }
     
-    @objc func onSignInButtonTap(){
+    
+    @objc func onSignInButtonTap() {
         goToSignIn()
     }
     
-    func goToSignIn(){
-        let signInViewController: SingInViewController = SingInViewController()
+    
+    func goToSignIn() {
+        let signInViewController: SignInViewController = SignInViewController()
         self.present(signInViewController, animated: true, completion: nil)
+    }
+    
+    
+    @objc func onLoginButtonTap() {
+        goToDashboardView()
+    }
+    
+    func goToDashboardView() {
+        let dashboardNavigationController: UINavigationController = UINavigationController()
+        let dashboardViewController: DashboardViewController = DashboardViewController()
+        dashboardNavigationController.setViewControllers([dashboardViewController], animated: true)
+        dashboardNavigationController.modalPresentationStyle = .fullScreen
+        present(dashboardNavigationController, animated: true, completion: nil)
+        
     }
 
 }
